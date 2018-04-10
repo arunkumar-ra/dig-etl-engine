@@ -51,13 +51,13 @@ class Measurement(object):
 class Trend(object):
     def __init__(self, timeseries_id, trend_element, filename):
         self.value = trend_element
-        self.doc_id = self.get_doc_id(trend_element)
+        self.doc_id = self.get_doc_id(trend_element, timeseries_id)
         self.timeseries_id = timeseries_id
         self.filename = filename
 
-    def get_doc_id(self, array):
-        array_str = json.dumps(array, cls=DecimalJSONEncoder)
-        hash_object = hashlib.sha1(array_str)
+    def get_doc_id(self, array, timeseries_id):
+        array_str = '{} {}'.format(json.dumps(array, cls=DecimalJSONEncoder), timeseries_id)
+        hash_object = hashlib.sha256(array_str)
         return hash_object.hexdigest()
 
     def to_dict(self):
