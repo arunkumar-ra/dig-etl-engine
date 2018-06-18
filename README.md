@@ -22,9 +22,9 @@ myDIG uses Docker to make installation easy:
 
 Install [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/). 
 
-> If you are working on [Mac](https://docs.docker.com/docker-for-mac/#advanced) or [Windows](https://docs.docker.com/docker-for-windows/#advanced), **make sure you allocate enough memory to docker virtual machine**. In Linux, Docker is built on LXC of kernel, the latest version of kernel and enough memory on host are required.
+Configure Docker to use at least **6GB** of memory. DIG will not work with less than 4GB and is unstable with less than 6GB.
 
-> If the memory is not enough, some service processes may not be fired up, or they will be killed by OS.
+> On Mac and Windows, you can set the Docker memory in the Preferences menu of the Docker application. Details are in the Docker documentation pages ([Mac Docker](https://docs.docker.com/docker-for-mac/#advanced) or [Windows Docker](https://docs.docker.com/docker-for-windows/#advanced)). In Linux, Docker is built on LXC of kernel, the latest version of kernel and enough memory on host are required.
 
 Clone this repository.
 
